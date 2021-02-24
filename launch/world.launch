@@ -22,7 +22,7 @@
   <arg name="yaw" default="0"/>
 
   <!-- Launch other relevant files-->
-  <include file="$(find drive_bot)/launch/drive_bot.launch"/>
+  <include file="$(find drive_bot)/launch/robot_description.launch"/>
 
   <!-- Find my robot Description-->
   <param name="robot_description" command="$(find xacro)/xacro --inorder '$(find drive_bot)/urdf/drive_bot.xacro'"/>

@@ -39,15 +39,29 @@
       </geometry>
     </visual>
 
+    <collision name='back_caster_collision'>
+      <origin xyz="-0.25 0 -0.05" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.0499"/>
+      </geometry>
+    </collision>
+
+    <visual name='back_caster_visual'>
+      <origin xyz="-0.25 0 -0.05" rpy=" 0 0 0"/>
+      <geometry>
+        <sphere radius="0.05"/>
+      </geometry>
+    </visual>
+
     <collision name='front_caster_collision'>
-      <origin xyz="0.2 0 -0.05" rpy=" 0 0 0"/>
+      <origin xyz="0.25 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
         <sphere radius="0.0499"/>
       </geometry>
     </collision>
 
     <visual name='front_caster_visual'>
-      <origin xyz="0.2 0 -0.05" rpy=" 0 0 0"/>
+      <origin xyz="0.25 0 -0.05" rpy=" 0 0 0"/>
       <geometry>
         <sphere radius="0.05"/>
       </geometry>
@@ -152,7 +166,7 @@
 
 
 
-  <link name='left_wheel'>
+  <link name='rear_left_wheel'>
     <inertial>
       <mass value="2.0"/>
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
@@ -163,22 +177,22 @@
       />
     </inertial>
 
-    <collision name='left_wheel_collision'>
+    <collision name='rear_left_wheel_collision'>
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/> 
       <geometry>
-        <cylinder radius="0.2" length="0.05"/>
+        <cylinder radius="0.15" length="0.1"/>
       </geometry>
     </collision>
 
-    <visual name='left_wheel_visual'>
+    <visual name='rear_left_wheel_visual'>
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
       <geometry>
-        <cylinder radius="0.2" length="0.05"/>
+        <cylinder radius="0.15" length="0.1"/>
       </geometry>
     </visual>
   </link>
 
-  <link name='right_wheel'>
+  <link name='rear_right_wheel'>
     <inertial>
       <mass value="2.0"/>
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/>
@@ -189,17 +203,17 @@
       />
     </inertial>
 
-    <collision name='right_wheel_collision'>
+    <collision name='rear_right_wheel_collision'>
       <origin xyz="0 0 0" rpy="0 1.5707 1.5707"/> 
       <geometry>
-        <cylinder radius="0.2" length="0.05"/>
+        <cylinder radius="0.15" length="0.1"/>
       </geometry>
     </collision>
 
-    <visual name='right_wheel_visual'>
+    <visual name='rear_right_wheel_visual'>
       <origin xyz="0 0 0" rpy=" 0 1.5707 1.5707"/>
       <geometry>
-        <cylinder radius="0.2" length="0.05"/>
+        <cylinder radius="0.15" length="0.1"/>
       </geometry>
     </visual>
   </link>
@@ -260,18 +274,18 @@
     </visual>
   </link>
 
-  <joint type="continuous" name="left_wheel_hinge">
-    <origin xyz="-0.15 0.2 0.1" rpy="0 0 0"/>
-    <child link="left_wheel"/>
+  <joint type="continuous" name="rear_left_wheel_hinge">
+    <origin xyz="0 0.25 0.05" rpy="0 0 0"/>
+    <child link="rear_left_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
     <limit effort="10000" velocity="1000"/>
     <dynamics damping="1.0" friction="1.0"/>
   </joint>
 
-  <joint type="continuous" name="right_wheel_hinge">
-    <origin xyz="-0.15 -0.2 0.1" rpy="0 0 0"/>
-    <child link="right_wheel"/>
+  <joint type="continuous" name="rear_right_wheel_hinge">
+    <origin xyz="0 -0.25 0.05" rpy="0 0 0"/>
+    <child link="rear_right_wheel"/>
     <parent link="chassis"/>
     <axis xyz="0 1 0" rpy="0 0 0"/>
     <limit effort="10000" velocity="1000"/>
