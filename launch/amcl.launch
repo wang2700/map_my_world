@@ -14,8 +14,8 @@
 
 		<param name="update_min_d" value="0.1"/>
 		<param name="update_min_a" value="0.2618"/>  
-		<param name="initial_pose_x" value="0"/>
-		<param name="initial_pose_y" value="0"/>
+		<param name="initial_pose_x" value="1.7"/>
+		<param name="initial_pose_y" value="2.5"/>
     </node>
     
     <!-- Move Base -->
